@@ -7,10 +7,12 @@ import time
 import smbus
 
 import TCA9548A
+from Adafruit_LED_Backpack import Matrix8x8
 
 bus = smbus.SMBus(1) # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
 plexer = TCA9548A.Multiplexer(1)
 mux_address=0x70
+display = Matrix8x8.Matrix8x8(address=0x71, busnum=1)
 
 DRV2605_ADDR = 0x5A
 
@@ -84,9 +86,12 @@ def selectLibrary(libraryValue):
 
 
 def begin():
+  display.begin()
+  display.set_brightness(0)
+  display.clear()
 
   for i in range(0, 8):
-    plexer.set_channel(mux_address,i)
+    plexer.set_channel(mux_address,[i])
     try:
       print("" + str(i) + ": DRV2605 device ID " + readDeviceID() + " with status " + readStatus())
 
@@ -108,12 +113,21 @@ def begin():
 
 
 
-def playEffect(effect, channel_id):
-  plexer.set_channel(mux_address, channel_id)
+def playEffect(effect, channel_ids):
+  plexer.set_channel(mux_address, channel_ids)
   # See Appendix A of http://www.ti.com/lit/ug/slau543/slau543.pdf
-  bWrite(DRV2605_REG_WAVESEQ1, effect)
-  bWrite(DRV2605_REG_WAVESEQ2, 0)
-  bWrite(DRV2605_REG_GO, 1)
+  try:
+    bWrite(DRV2605_REG_WAVESEQ1, effect)
+    bWrite(DRV2605_REG_WAVESEQ2, 0)
+    bWrite(DRV2605_REG_GO, 1)
+  except IOError:
+    print "Couldn't communicate with LRA at channel %s" % channel_ids
+
+  display.clear()
+  for channel_id in channel_ids:
+    display.set_pixel((channel_id-(channel_id%3))/3, channel_id%3, 1)
+  display.write_display()
+
 
 
 
@@ -125,9 +139,16 @@ def playAllWaveforms():
     if effect not in (15, 16, 118):
       print("Effect " + str(effect) + ": " + DRV2605_EFF_DESC[effect - 1])
       
-      playEffect(effect, 0)
-      time.sleep(.1)
-      playEffect(effect, 2)
+      for i in range(9):
+        playEffect(effect, [i])
+        time.sleep(.05)
+        display.clear()
+        display.write_display()
+
+      playEffect(effect, [0, 2])
+      time.sleep(.05)
+      display.clear()
+      display.write_display()
       
       time.sleep(2)
     
