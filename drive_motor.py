@@ -6,7 +6,11 @@
 import time
 import smbus
 
+import TCA9548A
+
 bus = smbus.SMBus(1) # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
+plexer = TCA9548A.Multiplexer(1)
+mux_address=0x70
 
 DRV2605_ADDR = 0x5A
 
@@ -80,25 +84,32 @@ def selectLibrary(libraryValue):
 
 
 def begin():
-  print("DRV2605 device ID: " + readDeviceID())
-  print("DRV2605 status: " + readStatus())
+
+  for i in range(0, 8):
+    plexer.set_channel(mux_address,i)
+    try:
+      print("" + str(i) + ": DRV2605 device ID " + readDeviceID() + " with status " + readStatus())
+
+      # Clear the STANDBY bit to exit the standby state (and go to the ready state)
+      bWrite(DRV2605_REG_MODE, 0x00)
+
+      # Switch to LRA library
+      selectLibrary(6)
+
+      # Turn on LRA mode
+      bWrite(DRV2605_REG_FEEDBACK, (0x01 << 7) | (0x3 << 4) | (0x01 << 2) | (0x02 << 0))
+      
+      # Set the ERM_OPEN_LOOP bit (bit 5) of the Control3 register to 1
+      # "Open-loop operation is recommended for ERM mode when using the ROM libraries"
+      bWrite(DRV2605_REG_CONTROL3, bRead(DRV2605_REG_CONTROL3) | 0x20)
+    except IOError:
+      print("" + str(i) + " not detected")
   
-  # Clear the STANDBY bit to exit the standby state (and go to the ready state)
-  bWrite(DRV2605_REG_MODE, 0x00)
-
-  # Switch to LRA library
-  selectLibrary(6)
-
-  # Turn on LRA mode
-  bWrite(DRV2605_REG_FEEDBACK, (0x01 << 7) | (0x3 << 4) | (0x01 << 2) | (0x02 << 0))
-  
-  # Set the ERM_OPEN_LOOP bit (bit 5) of the Control3 register to 1
-  # "Open-loop operation is recommended for ERM mode when using the ROM libraries"
-  bWrite(DRV2605_REG_CONTROL3, bRead(DRV2605_REG_CONTROL3) | 0x20)
 
 
 
-def playEffect(effect):
+def playEffect(effect, channel_id):
+  plexer.set_channel(mux_address, channel_id)
   # See Appendix A of http://www.ti.com/lit/ug/slau543/slau543.pdf
   bWrite(DRV2605_REG_WAVESEQ1, effect)
   bWrite(DRV2605_REG_WAVESEQ2, 0)
@@ -114,7 +125,9 @@ def playAllWaveforms():
     if effect not in (15, 16, 118):
       print("Effect " + str(effect) + ": " + DRV2605_EFF_DESC[effect - 1])
       
-      playEffect(effect)
+      playEffect(effect, 0)
+      time.sleep(.1)
+      playEffect(effect, 2)
       
       time.sleep(2)
     
