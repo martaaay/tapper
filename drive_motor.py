@@ -3,16 +3,20 @@
 # DRV2605 reference: http://www.ti.com/lit/ds/symlink/drv2605.pdf
 # MSP430TCH5E haptics library reference: http://www.ti.com/lit/ug/slau543/slau543.pdf
 
+import signal
+import sys
 import time
-import smbus
 
+import smbus
 import TCA9548A
+
 from Adafruit_LED_Backpack import Matrix8x8
 
 bus = smbus.SMBus(1) # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
 plexer = TCA9548A.Multiplexer(1)
 mux_address=0x70
 display = Matrix8x8.Matrix8x8(address=0x71, busnum=1)
+display.clear()
 
 DRV2605_ADDR = 0x5A
 
@@ -79,6 +83,13 @@ def readStatus():
   else:
     return "normal"
 
+def enter_standby():
+  bWrite(DRV2605_REG_MODE, 0x40)
+
+def exit_standby():
+  bWrite(DRV2605_REG_MODE, 0x00)
+
+
 def selectLibrary(libraryValue):
   # Todo: this has the side effect of setting the HI_Z bit to 0 (which is the default value)
   # Read section 4.2 of http://www.ti.com/lit/ug/slau543/slau543.pdf to determine which library is the best fit for a given actuator
@@ -86,9 +97,12 @@ def selectLibrary(libraryValue):
 
 
 def begin():
-  display.begin()
-  display.set_brightness(0)
-  display.clear()
+  try:
+    display.begin()
+    display.clear()
+    display.set_brightness(0)
+  except IOError:
+    print "Could not initialize display"
 
   for i in range(0, 8):
     plexer.set_channel(mux_address,[i])
@@ -96,7 +110,7 @@ def begin():
       print("" + str(i) + ": DRV2605 device ID " + readDeviceID() + " with status " + readStatus())
 
       # Clear the STANDBY bit to exit the standby state (and go to the ready state)
-      bWrite(DRV2605_REG_MODE, 0x00)
+      exit_standby()
 
       # Switch to LRA library
       selectLibrary(6)
@@ -111,7 +125,13 @@ def begin():
       print("" + str(i) + " not detected")
   
 
+def draw1x1pixel(x, y, xoffset, yoffset):
+  display.set_pixel(x+xoffset, y+yoffset, 1)
 
+def draw2x2pixel(x, y):
+  for yi in range(y*2, (y+1)*2):
+    for xi in range(x*2, (x+1)*2):
+      draw1x1pixel(xi, yi)
 
 def playEffect(effect, channel_ids):
   plexer.set_channel(mux_address, channel_ids)
@@ -123,12 +143,13 @@ def playEffect(effect, channel_ids):
   except IOError:
     print "Couldn't communicate with LRA at channel %s" % channel_ids
 
-  display.clear()
-  for channel_id in channel_ids:
-    display.set_pixel((channel_id-(channel_id%3))/3, channel_id%3, 1)
-  display.write_display()
-
-
+  try:
+    display.clear()
+    for channel_id in channel_ids:
+      draw1x1pixel((channel_id-(channel_id%3))/3, channel_id%3, 0, 0)
+    display.write_display()
+  except IOError:
+    pass
 
 
 def playAllWaveforms():
@@ -142,20 +163,36 @@ def playAllWaveforms():
       for i in range(9):
         playEffect(effect, [i])
         time.sleep(.05)
-        display.clear()
-        display.write_display()
+        try:
+          display.clear()
+          display.write_display()
+        except:
+          pass
 
       playEffect(effect, [0, 2])
       time.sleep(.05)
-      display.clear()
-      display.write_display()
+      try:
+        display.clear()
+        display.write_display()
+      except:
+        pass
       
+      time.sleep(.25)
+      enter_standby()
       time.sleep(2)
+      exit_standby()
     
     effect += 1
 
+def shutdown():
+  print('Exiting...')
+  enter_standby()
 
+def sigint_handler(signal, frame):
+  shutdown()
+  sys.exit(0)
 
+signal.signal(signal.SIGINT, sigint_handler)
 begin()
-
 playAllWaveforms()
+shutdown()
