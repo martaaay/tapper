@@ -1,1 +1,3 @@
 smbus
+Pillow
+Adafruit_GPIO

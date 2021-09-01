@@ -102,7 +102,7 @@ def begin():
     display.clear()
     display.set_brightness(0)
   except IOError:
-    print "Could not initialize display"
+    print("Could not initialize display")
 
   for i in range(0, 8):
     plexer.set_channel(mux_address,[i])
@@ -141,12 +141,12 @@ def playEffect(effect, channel_ids):
     bWrite(DRV2605_REG_WAVESEQ2, 0)
     bWrite(DRV2605_REG_GO, 1)
   except IOError:
-    print "Couldn't communicate with LRA at channel %s" % channel_ids
+    print("Couldn't communicate with LRA at channel %s" % channel_ids)
 
   try:
     display.clear()
     for channel_id in channel_ids:
-      draw1x1pixel((channel_id-(channel_id%3))/3, channel_id%3, 0, 0)
+      draw1x1pixel(int((channel_id-(channel_id%3))/3), int(channel_id%3), 0, 0)
     display.write_display()
   except IOError:
     pass
