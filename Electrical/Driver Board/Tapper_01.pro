@@ -1,25 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : /Users/marty.weiner/Dropbox/Tapper/Main Board v0.3 - 3x3/Tapper.brd
+Job           : /Users/marty.weiner/Dropbox/Tapper/Electrical/Driver Board/Tapper.brd
 
-Start at      : 00:35:23 (9/16/21)
-End at        : 00:35:28 (9/16/21)
-Elapsed time  : 00:00:03
+Start at      : 22:51:53 (12/28/21)
+End at        : 19:00:00 (12/31/69)
+Elapsed time  : 00:00:00
 
-Signals       :    50   RoutingGrid: 19.685 mil  Layers: 2
+Signals       :    50   RoutingGrid: 19.685 mil  Layers: 4
 Connections   :   142   predefined:  0 ( 0 Vias )
 
-Router memory :   43168
+Router memory :   0
 
-Passname          :    Busses     Route Optimize1 Optimize2 Optimize3 Optimize4
+Passname          :          
 
-Time per pass     :  00:00:00  00:00:03  00:00:00  00:00:00  00:00:00  00:00:00
-Number of Ripups  :         0       271         0         0         0         0
-max. Level        :         0         6         0         0         0         0
-max. Total        :         0        47         0         0         0         0
+Time per pass     :  00:00:00
+Number of Ripups  :         0
+max. Level        :         0
+max. Total        :         0
 
-Routed            :         0       120       120       120       120       120
-Vias              :         0       137       104        99        92        90
-Resolution        :     0.0 %    84.5 %    84.5 %    84.5 %    84.5 %    84.5 %
+Routed            :         0
+Vias              :         0
+Resolution        :     0.0 %
 
 Final             : 
