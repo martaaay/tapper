@@ -4678,6 +4678,10 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <classes>
 <class number="0" name="default" width="0" drill="0">
 </class>
+<class number="1" name="Ground" width="0.2032" drill="0.3048">
+</class>
+<class number="2" name="Power" width="0.2032" drill="0.3048">
+</class>
 </classes>
 <parts>
 <part name="U3" library="microbuilder" deviceset="DRV2605" device="_SOP" value="DRV2605LDGS"/>
@@ -5083,7 +5087,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="P1" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="VIN" class="0">
+<net name="VIN" class="2">
 <segment>
 <pinref part="U3" gate="G$1" pin="EN"/>
 <pinref part="U$20" gate="G$1" pin="VIN"/>
@@ -5145,7 +5149,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <wire x1="198.12" y1="-10.16" x2="198.12" y2="0" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="U3" gate="G$1" pin="GND"/>
 <pinref part="U$19" gate="G$1" pin="GND"/>
@@ -5656,7 +5660,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <junction x="139.7" y="91.44"/>
 </segment>
 </net>
-<net name="+5V" class="0">
+<net name="+5V" class="2">
 <segment>
 <pinref part="U3" gate="G$1" pin="VDD"/>
 <wire x1="132.08" y1="132.08" x2="157.48" y2="132.08" width="0.1524" layer="91"/>
@@ -5986,7 +5990,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <wire x1="102.87" y1="48.768" x2="102.87" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VIN" class="0">
+<net name="VIN" class="2">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="U$1" gate="G$1" pin="VIN"/>
@@ -6032,7 +6036,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <junction x="122.682" y="98.298"/>
 </segment>
 </net>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="C23" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="40.64" x2="45.72" y2="43.18" width="0.1524" layer="91"/>
