@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -5842,12 +5842,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="U12" gate="G$1" pin="#RESET"/>
 <label x="43.18" y="91.44" size="1.778" layer="95"/>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="22.86" y1="91.44" x2="26.67" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="26.67" y1="91.44" x2="55.88" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="26.67" y1="91.44" x2="26.67" y2="144.78" width="0.1524" layer="91"/>
-<junction x="26.67" y="91.44"/>
-<wire x1="26.67" y1="144.78" x2="142.24" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="144.78" x2="142.24" y2="102.87" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="91.44" x2="55.88" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="0SDA" class="0">
@@ -5904,30 +5899,29 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U12" gate="G$1" pin="SCL2"/>
 <label x="88.9" y="81.28" size="1.778" layer="95"/>
-<wire x1="86.36" y1="81.28" x2="100.33" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="RN2" gate="G$1" pin="7"/>
-<wire x1="104.902" y1="85.598" x2="100.33" y2="85.598" width="0.1524" layer="91"/>
-<wire x1="100.33" y1="85.598" x2="100.33" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="81.28" x2="104.902" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="RN2" gate="G$1" pin="9"/>
+<wire x1="104.902" y1="81.28" x2="104.902" y2="80.518" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="3SDA" class="0">
 <segment>
 <pinref part="U12" gate="G$1" pin="SDA3"/>
 <label x="88.9" y="76.2" size="1.778" layer="95"/>
-<wire x1="86.36" y1="76.2" x2="101.6" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="76.2" x2="102.87" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="102.87" y1="76.2" x2="102.87" y2="83.058" width="0.1524" layer="91"/>
 <pinref part="RN2" gate="G$1" pin="8"/>
-<wire x1="104.902" y1="83.058" x2="101.6" y2="83.058" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="83.058" x2="101.6" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="102.87" y1="83.058" x2="104.902" y2="83.058" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="3SCL" class="0">
 <segment>
 <pinref part="U12" gate="G$1" pin="SCL3"/>
 <label x="88.9" y="73.66" size="1.778" layer="95"/>
-<wire x1="86.36" y1="73.66" x2="102.87" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="RN2" gate="G$1" pin="9"/>
-<wire x1="104.902" y1="80.518" x2="102.87" y2="80.518" width="0.1524" layer="91"/>
-<wire x1="102.87" y1="80.518" x2="102.87" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="73.66" x2="103.632" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="RN2" gate="G$1" pin="7"/>
+<wire x1="103.632" y1="73.66" x2="103.632" y2="85.598" width="0.1524" layer="91"/>
+<wire x1="103.632" y1="85.598" x2="104.902" y2="85.598" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="4SDA" class="0">
@@ -6037,21 +6031,17 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </segment>
 <segment>
 <pinref part="RN1" gate="G$1" pin="10"/>
-<pinref part="RN1" gate="G$1" pin="5"/>
-<wire x1="122.682" y1="48.768" x2="122.682" y2="66.548" width="0.1524" layer="91"/>
 <pinref part="U$3" gate="G$1" pin="VIN"/>
 <wire x1="122.682" y1="66.548" x2="129.54" y2="66.548" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="66.548" x2="129.54" y2="69.85" width="0.1524" layer="91"/>
-<junction x="122.682" y="66.548"/>
 </segment>
 <segment>
-<pinref part="RN2" gate="G$1" pin="5"/>
-<pinref part="RN2" gate="G$1" pin="10"/>
-<wire x1="122.682" y1="80.518" x2="122.682" y2="98.298" width="0.1524" layer="91"/>
 <pinref part="U$9" gate="G$1" pin="VIN"/>
-<wire x1="122.682" y1="98.298" x2="129.54" y2="98.298" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="98.298" x2="129.54" y2="106.68" width="0.1524" layer="91"/>
-<junction x="122.682" y="98.298"/>
+<wire x1="129.54" y1="98.298" x2="129.54" y2="98.552" width="0.1524" layer="91"/>
+<pinref part="RN2" gate="G$1" pin="5"/>
+<wire x1="129.54" y1="98.552" x2="129.54" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="122.682" y1="80.518" x2="129.54" y2="80.518" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="80.518" x2="129.54" y2="98.298" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="1">
@@ -6082,11 +6072,6 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="U$7" gate="G$1" pin="GND"/>
 <wire x1="43.18" y1="68.58" x2="38.1" y2="68.58" width="0.1524" layer="91"/>
 <junction x="43.18" y="68.58"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<wire x1="152.4" y1="138.43" x2="152.4" y2="140.97" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

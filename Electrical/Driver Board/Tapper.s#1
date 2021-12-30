@@ -4728,7 +4728,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="C21" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
 <part name="U$63" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$65" library="microbuilder" deviceset="FRAME_A4_ADAFRUIT" device=""/>
-<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR"/>
+<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR, PCA9548A"/>
 <part name="R5" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="R6" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="C23" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>
@@ -4739,9 +4739,9 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="U$5" library="microbuilder" deviceset="VIN" device=""/>
 <part name="U$6" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$7" library="microbuilder" deviceset="GND" device=""/>
-<part name="RN2" library="resistor-array" deviceset="745-10" device="NS"/>
+<part name="RN2" library="resistor-array" deviceset="745-10" device="NS" value="745C101332JP"/>
 <part name="U$9" library="microbuilder" deviceset="VIN" device=""/>
-<part name="RN1" library="resistor-array" deviceset="745-10" device="NS"/>
+<part name="RN1" library="resistor-array" deviceset="745-10" device="NS" value="745C101332JP"/>
 <part name="U$3" library="microbuilder" deviceset="VIN" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -4765,7 +4765,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="U$16" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$17" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$18" library="microbuilder" deviceset="GND" device=""/>
-<part name="MI" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="MI" library="con-jst-ph" deviceset="B2B-PH-K" device="" value="B2B-PH-K-S(LF)(SN)"/>
 <part name="M0" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
 <part name="M1" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
 <part name="M2" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
@@ -5008,7 +5008,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </instance>
 <instance part="MI" gate="G$1" x="144.78" y="139.7" smashed="yes">
 <attribute name="NAME" x="143.51" y="142.875" size="1.778" layer="95"/>
-<attribute name="VALUE" x="143.51" y="132.08" size="1.778" layer="95"/>
+<attribute name="VALUE" x="150.368" y="139.7" size="1.778" layer="95"/>
 </instance>
 <instance part="M0" gate="G$1" x="144.78" y="93.98" smashed="yes">
 <attribute name="NAME" x="143.51" y="97.155" size="1.778" layer="95"/>
@@ -6090,28 +6090,15 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </sheet>
 </sheets>
 <errors>
-<approved hash="202,1,106.68,129.54,U3,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,132.08,U3,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,83.82,U4,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,86.36,U4,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,40.64,U5,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,43.18,U5,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,0,U6,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,2.54,U6,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,-40.64,U7,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,-38.1,U7,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,101.6,U8,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,104.14,U8,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,58.42,U9,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,60.96,U9,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,17.78,U10,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,20.32,U10,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,-25.4,U11,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,-22.86,U11,VDD,+5V,,,"/>
-<approved hash="113,1,38.3371,90.3012,JP2,,,,,"/>
-<approved hash="113,1,142.428,139.311,JP1,,,,,"/>
-<approved hash="113,2,113.792,91.1648,RN2,,,,,"/>
-<approved hash="113,2,113.792,59.4148,RN1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
