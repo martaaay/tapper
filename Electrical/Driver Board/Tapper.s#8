@@ -4728,7 +4728,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="C21" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
 <part name="U$63" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$65" library="microbuilder" deviceset="FRAME_A4_ADAFRUIT" device=""/>
-<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR"/>
+<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR | PCA9548APW,118 | PI4MSD5V9547LEX"/>
 <part name="R5" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="R6" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="C23" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>
@@ -4739,9 +4739,9 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="U$5" library="microbuilder" deviceset="VIN" device=""/>
 <part name="U$6" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$7" library="microbuilder" deviceset="GND" device=""/>
-<part name="RN2" library="resistor-array" deviceset="745-10" device="NS"/>
+<part name="RN2" library="resistor-array" deviceset="745-10" device="NS" value="745C101332JP"/>
 <part name="U$9" library="microbuilder" deviceset="VIN" device=""/>
-<part name="RN1" library="resistor-array" deviceset="745-10" device="NS"/>
+<part name="RN1" library="resistor-array" deviceset="745-10" device="NS" value="745C101332JP"/>
 <part name="U$3" library="microbuilder" deviceset="VIN" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -4765,15 +4765,15 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="U$16" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$17" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$18" library="microbuilder" deviceset="GND" device=""/>
-<part name="P1" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P2" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P3" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P4" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P5" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P6" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P7" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P8" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
-<part name="P9" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="MI" library="con-jst-ph" deviceset="B2B-PH-K" device="" value="B2B-PH-K-S(LF)(SN)"/>
+<part name="M0" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="M1" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="M2" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="M3" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="M7" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="M6" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="M5" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
+<part name="M4" library="con-jst-ph" deviceset="B2B-PH-K" device=""/>
 <part name="P+12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -5006,39 +5006,39 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <instance part="U$18" gate="G$1" x="200.66" y="99.06" smashed="yes">
 <attribute name="VALUE" x="199.136" y="96.52" size="1.27" layer="96"/>
 </instance>
-<instance part="P1" gate="G$1" x="144.78" y="139.7" smashed="yes">
+<instance part="MI" gate="G$1" x="144.78" y="139.7" smashed="yes">
 <attribute name="NAME" x="143.51" y="142.875" size="1.778" layer="95"/>
-<attribute name="VALUE" x="143.51" y="132.08" size="1.778" layer="95"/>
+<attribute name="VALUE" x="150.368" y="139.7" size="1.778" layer="95"/>
 </instance>
-<instance part="P2" gate="G$1" x="144.78" y="93.98" smashed="yes">
+<instance part="M0" gate="G$1" x="144.78" y="93.98" smashed="yes">
 <attribute name="NAME" x="143.51" y="97.155" size="1.778" layer="95"/>
 <attribute name="VALUE" x="143.51" y="86.36" size="1.778" layer="95"/>
 </instance>
-<instance part="P3" gate="G$1" x="147.32" y="50.8" smashed="yes">
+<instance part="M1" gate="G$1" x="147.32" y="50.8" smashed="yes">
 <attribute name="NAME" x="146.05" y="53.975" size="1.778" layer="95"/>
 <attribute name="VALUE" x="146.05" y="43.18" size="1.778" layer="95"/>
 </instance>
-<instance part="P4" gate="G$1" x="147.32" y="10.16" smashed="yes">
+<instance part="M2" gate="G$1" x="147.32" y="10.16" smashed="yes">
 <attribute name="NAME" x="146.05" y="13.335" size="1.778" layer="95"/>
 <attribute name="VALUE" x="146.05" y="2.54" size="1.778" layer="95"/>
 </instance>
-<instance part="P5" gate="G$1" x="147.32" y="-30.48" smashed="yes">
+<instance part="M3" gate="G$1" x="147.32" y="-30.48" smashed="yes">
 <attribute name="NAME" x="146.05" y="-27.305" size="1.778" layer="95"/>
 <attribute name="VALUE" x="146.05" y="-38.1" size="1.778" layer="95"/>
 </instance>
-<instance part="P6" gate="G$1" x="241.3" y="-15.24" smashed="yes">
+<instance part="M7" gate="G$1" x="241.3" y="-15.24" smashed="yes">
 <attribute name="NAME" x="240.03" y="-12.065" size="1.778" layer="95"/>
 <attribute name="VALUE" x="240.03" y="-22.86" size="1.778" layer="95"/>
 </instance>
-<instance part="P7" gate="G$1" x="241.3" y="27.94" smashed="yes">
+<instance part="M6" gate="G$1" x="241.3" y="27.94" smashed="yes">
 <attribute name="NAME" x="240.03" y="31.115" size="1.778" layer="95"/>
 <attribute name="VALUE" x="240.03" y="20.32" size="1.778" layer="95"/>
 </instance>
-<instance part="P8" gate="G$1" x="241.3" y="68.58" smashed="yes">
+<instance part="M5" gate="G$1" x="241.3" y="68.58" smashed="yes">
 <attribute name="NAME" x="240.03" y="71.755" size="1.778" layer="95"/>
 <attribute name="VALUE" x="240.03" y="60.96" size="1.778" layer="95"/>
 </instance>
-<instance part="P9" gate="G$1" x="241.3" y="111.76" smashed="yes">
+<instance part="M4" gate="G$1" x="241.3" y="111.76" smashed="yes">
 <attribute name="NAME" x="240.03" y="114.935" size="1.778" layer="95"/>
 <attribute name="VALUE" x="240.03" y="104.14" size="1.778" layer="95"/>
 </instance>
@@ -5077,14 +5077,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U3" gate="G$1" pin="OUT+"/>
 <wire x1="132.08" y1="139.7" x2="139.7" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="P1" gate="G$1" pin="1"/>
+<pinref part="MI" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-2" class="0">
 <segment>
 <pinref part="U3" gate="G$1" pin="OUT-"/>
 <wire x1="132.08" y1="137.16" x2="139.7" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="P1" gate="G$1" pin="2"/>
+<pinref part="MI" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VIN" class="2">
@@ -5276,7 +5276,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U4" gate="G$1" pin="OUT+"/>
 <wire x1="132.08" y1="93.98" x2="139.7" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="P2" gate="G$1" pin="1"/>
+<pinref part="M0" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="93.98" x2="140.462" y2="93.98" width="0.1524" layer="91"/>
 <junction x="139.7" y="93.98"/>
 </segment>
@@ -5294,14 +5294,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT+"/>
 <wire x1="132.08" y1="50.8" x2="142.24" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="P3" gate="G$1" pin="1"/>
+<pinref part="M1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-4" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT-"/>
 <wire x1="132.08" y1="48.26" x2="142.24" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="P3" gate="G$1" pin="2"/>
+<pinref part="M1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -5317,14 +5317,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U6" gate="G$1" pin="OUT+"/>
 <wire x1="132.08" y1="10.16" x2="142.24" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="P4" gate="G$1" pin="1"/>
+<pinref part="M2" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-5" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="OUT-"/>
 <wire x1="132.08" y1="7.62" x2="142.24" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="P4" gate="G$1" pin="2"/>
+<pinref part="M2" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -5340,14 +5340,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U7" gate="G$1" pin="OUT+"/>
 <wire x1="132.08" y1="-30.48" x2="142.24" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="P5" gate="G$1" pin="1"/>
+<pinref part="M3" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-6" class="0">
 <segment>
 <pinref part="U7" gate="G$1" pin="OUT-"/>
 <wire x1="132.08" y1="-33.02" x2="142.24" y2="-33.02" width="0.1524" layer="91"/>
-<pinref part="P5" gate="G$1" pin="2"/>
+<pinref part="M3" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -5363,14 +5363,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U8" gate="G$1" pin="OUT+"/>
 <wire x1="226.06" y1="111.76" x2="236.22" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="P9" gate="G$1" pin="1"/>
+<pinref part="M4" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-7" class="0">
 <segment>
 <pinref part="U8" gate="G$1" pin="OUT-"/>
 <wire x1="226.06" y1="109.22" x2="236.22" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="P9" gate="G$1" pin="2"/>
+<pinref part="M4" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -5386,14 +5386,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U9" gate="G$1" pin="OUT+"/>
 <wire x1="226.06" y1="68.58" x2="236.22" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="P8" gate="G$1" pin="1"/>
+<pinref part="M5" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-8" class="0">
 <segment>
 <pinref part="U9" gate="G$1" pin="OUT-"/>
 <wire x1="226.06" y1="66.04" x2="236.22" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="P8" gate="G$1" pin="2"/>
+<pinref part="M5" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -5409,14 +5409,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U10" gate="G$1" pin="OUT+"/>
 <wire x1="226.06" y1="27.94" x2="236.22" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="P7" gate="G$1" pin="1"/>
+<pinref part="M6" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-9" class="0">
 <segment>
 <pinref part="U10" gate="G$1" pin="OUT-"/>
 <wire x1="226.06" y1="25.4" x2="236.22" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="P7" gate="G$1" pin="2"/>
+<pinref part="M6" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -5432,14 +5432,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U11" gate="G$1" pin="OUT+"/>
 <wire x1="226.06" y1="-15.24" x2="236.22" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="P6" gate="G$1" pin="1"/>
+<pinref part="M7" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="OUT-10" class="0">
 <segment>
 <pinref part="U11" gate="G$1" pin="OUT-"/>
 <wire x1="226.06" y1="-17.78" x2="236.22" y2="-17.78" width="0.1524" layer="91"/>
-<pinref part="P6" gate="G$1" pin="2"/>
+<pinref part="M7" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -5601,7 +5601,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U4" gate="G$1" pin="OUT-"/>
 <wire x1="140.462" y1="91.44" x2="139.7" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="P2" gate="G$1" pin="2"/>
+<pinref part="M0" gate="G$1" pin="2"/>
 <wire x1="139.7" y1="91.44" x2="132.08" y2="91.44" width="0.1524" layer="91"/>
 <junction x="139.7" y="91.44"/>
 </segment>
@@ -5756,6 +5756,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </sheet>
 <sheet>
 <plain>
+<text x="102.87" y="104.394" size="1.778" layer="97">3.3kohm resistor ladder</text>
 </plain>
 <instances>
 <instance part="U$65" gate="G$1" x="0" y="0" smashed="yes">
@@ -5928,28 +5929,30 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <segment>
 <pinref part="U12" gate="G$1" pin="SDA4"/>
 <label x="88.9" y="68.58" size="1.778" layer="95"/>
-<wire x1="86.36" y1="68.58" x2="104.902" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="RN1" gate="G$1" pin="1"/>
-<wire x1="104.902" y1="68.58" x2="104.902" y2="66.548" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="68.58" x2="103.124" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="103.124" y1="68.58" x2="103.124" y2="58.928" width="0.1524" layer="91"/>
+<pinref part="RN1" gate="G$1" pin="4"/>
+<wire x1="103.124" y1="58.928" x2="104.902" y2="58.928" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="4SCL" class="0">
 <segment>
 <pinref part="U12" gate="G$1" pin="SCL4"/>
 <label x="88.9" y="66.04" size="1.778" layer="95"/>
-<wire x1="86.36" y1="66.04" x2="102.87" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="RN1" gate="G$1" pin="2"/>
-<wire x1="104.902" y1="64.008" x2="102.87" y2="64.008" width="0.1524" layer="91"/>
-<wire x1="102.87" y1="64.008" x2="102.87" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="66.04" x2="101.346" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="RN1" gate="G$1" pin="3"/>
+<wire x1="101.346" y1="66.04" x2="101.346" y2="61.468" width="0.1524" layer="91"/>
+<wire x1="101.346" y1="61.468" x2="104.902" y2="61.468" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5SDA" class="0">
 <segment>
 <pinref part="U12" gate="G$1" pin="SDA5"/>
 <label x="88.9" y="60.96" size="1.778" layer="95"/>
-<wire x1="86.36" y1="60.96" x2="104.902" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="RN1" gate="G$1" pin="3"/>
-<wire x1="104.902" y1="60.96" x2="104.902" y2="61.468" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="60.96" x2="100.076" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="100.076" y1="60.96" x2="100.076" y2="64.008" width="0.1524" layer="91"/>
+<pinref part="RN1" gate="G$1" pin="2"/>
+<wire x1="100.076" y1="64.008" x2="104.902" y2="64.008" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5SCL" class="0">
@@ -5957,9 +5960,9 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="U12" gate="G$1" pin="SCL5"/>
 <label x="88.9" y="58.42" size="1.778" layer="95"/>
 <wire x1="86.36" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="RN1" gate="G$1" pin="4"/>
-<wire x1="104.902" y1="58.928" x2="99.06" y2="58.928" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="58.928" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="RN1" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="58.42" x2="99.06" y2="66.548" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="66.548" x2="104.902" y2="66.548" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="6SDA" class="0">
@@ -6088,28 +6091,15 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </sheet>
 </sheets>
 <errors>
-<approved hash="202,1,106.68,129.54,U3,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,132.08,U3,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,83.82,U4,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,86.36,U4,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,40.64,U5,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,43.18,U5,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,0,U6,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,2.54,U6,VDD,+5V,,,"/>
-<approved hash="202,1,106.68,-40.64,U7,IN/TRIG,,,,"/>
 <approved hash="104,1,132.08,-38.1,U7,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,101.6,U8,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,104.14,U8,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,58.42,U9,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,60.96,U9,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,17.78,U10,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,20.32,U10,VDD,+5V,,,"/>
-<approved hash="202,1,200.66,-25.4,U11,IN/TRIG,,,,"/>
 <approved hash="104,1,226.06,-22.86,U11,VDD,+5V,,,"/>
-<approved hash="113,1,38.3371,90.3012,JP2,,,,,"/>
-<approved hash="113,1,142.428,139.311,JP1,,,,,"/>
-<approved hash="113,2,113.792,91.1648,RN2,,,,,"/>
-<approved hash="113,2,113.792,59.4148,RN1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
