@@ -4463,7 +4463,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="C21" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
 <part name="U$63" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$65" library="microbuilder" deviceset="FRAME_A4_ADAFRUIT" device=""/>
-<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR | PCA9548APW,118 | PI4MSD5V9547LEX"/>
+<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR | PCA9548APW,118"/>
 <part name="R5" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="R6" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="C23" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>

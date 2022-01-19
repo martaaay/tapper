@@ -463,7 +463,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </class>
 <class number="1" name="Ground" width="0.2032" drill="0.3048">
 </class>
-<class number="2" name="Power" width="0.2032" drill="0.3048">
+<class number="2" name="Power" width="0.3048" drill="0.3048">
 </class>
 </classes>
 <designrules name="default *">
@@ -791,7 +791,7 @@ design rules under a new name.</description>
 <wire x1="-4.0730875" y1="25.527" x2="-1.9972875" y2="25.527" width="0.1524" layer="1"/>
 <wire x1="-1.9972875" y1="25.527" x2="-0.0716875" y2="27.4526" width="0.1524" layer="1"/>
 </signal>
-<signal name="VIN" class="2">
+<signal name="VIN">
 <contactref element="R6" pad="2"/>
 <contactref element="R5" pad="2"/>
 <contactref element="R10" pad="2"/>
@@ -1840,12 +1840,12 @@ design rules under a new name.</description>
 <via x="20.46605" y="12.24585" extent="1-16" drill="0.35"/>
 <via x="18.4213" y="11.0569" extent="1-16" drill="0.35"/>
 <contactref element="P1" pad="2"/>
-<wire x1="57" y1="7.724" x2="57" y2="8.1" width="0.2032" layer="16"/>
-<wire x1="54.476" y1="5.2" x2="56.0856" y2="6.8096" width="0.2032" layer="16"/>
-<wire x1="56.0856" y1="6.8096" x2="56.0856" y2="6.8656125" width="0.2032" layer="16"/>
-<wire x1="56.0856" y1="6.8656125" x2="56.2343875" y2="7.0144" width="0.2032" layer="16"/>
-<wire x1="56.2343875" y1="7.0144" x2="56.2904" y2="7.0144" width="0.2032" layer="16"/>
-<wire x1="56.2904" y1="7.0144" x2="57" y2="7.724" width="0.2032" layer="16"/>
+<wire x1="57" y1="7.724" x2="57" y2="8.1" width="0.3048" layer="16"/>
+<wire x1="54.476" y1="5.2" x2="56.0856" y2="6.8096" width="0.3048" layer="16"/>
+<wire x1="56.0856" y1="6.8096" x2="56.0856" y2="6.8656125" width="0.3048" layer="16"/>
+<wire x1="56.0856" y1="6.8656125" x2="56.2343875" y2="7.0144" width="0.3048" layer="16"/>
+<wire x1="56.2343875" y1="7.0144" x2="56.2904" y2="7.0144" width="0.3048" layer="16"/>
+<wire x1="56.2904" y1="7.0144" x2="57" y2="7.724" width="0.3048" layer="16"/>
 <contactref element="P2" pad="1"/>
 <wire x1="54.9" y1="20" x2="56.8" y2="21.9" width="0.2032" layer="1"/>
 <wire x1="56.8" y1="21.9" x2="57" y2="21.9" width="0.2032" layer="1"/>

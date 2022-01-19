@@ -185,6 +185,7 @@
 <hole x="1" y="4" drill="1"/>
 <hole x="3" y="4" drill="1"/>
 <hole x="59.2" y="18.1" drill="1"/>
+<text x="55.102" y="16.484" size="0.8128" layer="25">uC</text>
 </plain>
 <libraries>
 <library name="microbuilder">
@@ -716,13 +717,13 @@ design rules under a new name.</description>
 <attribute name="NAME" x="20.066" y="7.784" size="0.8128" layer="25" ratio="18" rot="R180"/>
 </element>
 <element name="U7" library="microbuilder" package="PSOP10" value="DRV2605LDGS" x="35.052" y="9.812" smashed="yes" rot="R90">
-<attribute name="NAME" x="33.274" y="8.038" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="34.874" y="12.438" size="0.8128" layer="25" ratio="18" rot="R180"/>
 </element>
 <element name="U8" library="microbuilder" package="PSOP10" value="DRV2605LDGS" x="34.952" y="27.584" smashed="yes" rot="R90">
-<attribute name="NAME" x="34.444" y="30.128" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="34.844" y="30.128" size="0.8128" layer="25" ratio="18" rot="R180"/>
 </element>
 <element name="U9" library="microbuilder" package="PSOP10" value="DRV2605LDGS" x="51.208" y="27.492" smashed="yes" rot="R90">
-<attribute name="NAME" x="50.87" y="30.09" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="50.97" y="30.09" size="0.8128" layer="25" ratio="18" rot="R180"/>
 </element>
 <element name="RN2" library="resistor-array" package="745-10NS" value="745C101332JP" x="12.192" y="17.018" smashed="yes" rot="R180">
 <attribute name="NAME" x="7.82" y="17.3785" size="1.016" layer="25" ratio="18" rot="R270"/>
@@ -768,11 +769,9 @@ design rules under a new name.</description>
 </element>
 <element name="P1" library="con-jst-ph" package="B5B-PH-K" value="B5B-PH-K" x="57" y="10.1" smashed="yes" rot="R90">
 <attribute name="LABEL" value="" x="57" y="10.1" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="54.714" y="4.131" size="1.016" layer="25" ratio="18" rot="R90"/>
 </element>
 <element name="P2" library="con-jst-ph" package="B4B-PH-K" value="B4B-PH-K" x="57" y="24.9" smashed="yes" rot="R90">
 <attribute name="LABEL" value="" x="57" y="24.9" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="54.714" y="19.947" size="1.016" layer="25" ratio="18" rot="R90"/>
 </element>
 </elements>
 <signals>

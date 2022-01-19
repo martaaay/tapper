@@ -4728,7 +4728,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="C21" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
 <part name="U$63" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$65" library="microbuilder" deviceset="FRAME_A4_ADAFRUIT" device=""/>
-<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR, PCA9548A"/>
+<part name="U12" library="microbuilder" deviceset="TCA9548A" device="" value=" TCA9548APWR | PCA9548APW,118 | PI4MSD5V9547LEX"/>
 <part name="R5" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="R6" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="C23" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>
@@ -5756,6 +5756,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </sheet>
 <sheet>
 <plain>
+<text x="102.87" y="104.394" size="1.778" layer="97">3.3kohm resistor ladder</text>
 </plain>
 <instances>
 <instance part="U$65" gate="G$1" x="0" y="0" smashed="yes">

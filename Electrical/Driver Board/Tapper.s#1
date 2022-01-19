@@ -5495,6 +5495,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <sheet>
 <plain>
 <text x="102.87" y="104.394" size="1.778" layer="97">3.3kohm resistor ladder</text>
+<text x="55.626" y="118.618" size="3.81" layer="97">NOTE: VIN is 3.3v</text>
 </plain>
 <instances>
 <instance part="U$65" gate="G$1" x="0" y="0" smashed="yes">
