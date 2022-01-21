@@ -4587,7 +4587,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <part name="P1" library="con-jst-ph" deviceset="B5B-PH-K" device=""/>
 <part name="P+21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="U$25" library="microbuilder" deviceset="GND" device=""/>
-<part name="U$23" library="PCA9517" deviceset="PCA9517" device="" value="PCA9515B"/>
+<part name="U23" library="PCA9517" deviceset="PCA9517" device="" value="PCA9515B"/>
 <part name="V3.1" library="microbuilder" deviceset="VIN" device=""/>
 <part name="U$20" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$27" library="microbuilder" deviceset="GND" device=""/>
@@ -4872,7 +4872,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <instance part="U$25" gate="G$1" x="10.922" y="113.284" smashed="yes">
 <attribute name="VALUE" x="9.398" y="110.744" size="1.27" layer="96"/>
 </instance>
-<instance part="U$23" gate="G$1" x="58.928" y="130.302" smashed="yes"/>
+<instance part="U23" gate="G$1" x="58.928" y="130.302" smashed="yes"/>
 <instance part="V3.1" gate="G$1" x="40.64" y="161.29" smashed="yes">
 <attribute name="VALUE" x="39.116" y="162.306" size="1.27" layer="96"/>
 </instance>
@@ -4927,12 +4927,12 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </net>
 <net name="VIN" class="0">
 <segment>
-<pinref part="U$23" gate="G$1" pin="VCCA"/>
+<pinref part="U23" gate="G$1" pin="VCCA"/>
 <wire x1="40.64" y1="158.75" x2="40.64" y2="155.448" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="155.448" x2="40.64" y2="150.622" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="150.622" x2="43.688" y2="150.622" width="0.1524" layer="91"/>
 <pinref part="V3.1" gate="G$1" pin="VIN"/>
-<pinref part="U$23" gate="G$1" pin="VCCB"/>
+<pinref part="U23" gate="G$1" pin="VCCB"/>
 <wire x1="71.628" y1="150.622" x2="71.628" y2="155.448" width="0.1524" layer="91"/>
 <wire x1="71.628" y1="155.448" x2="40.64" y2="155.448" width="0.1524" layer="91"/>
 <junction x="40.64" y="155.448"/>
@@ -5118,7 +5118,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </segment>
 <segment>
 <pinref part="U$20" gate="G$1" pin="GND"/>
-<pinref part="U$23" gate="G$1" pin="GND"/>
+<pinref part="U23" gate="G$1" pin="GND"/>
 <wire x1="43.688" y1="133.096" x2="43.688" y2="143.002" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -5440,14 +5440,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="P1" gate="G$1" pin="4"/>
 </segment>
 <segment>
-<pinref part="U$23" gate="G$1" pin="SDAA"/>
+<pinref part="U23" gate="G$1" pin="SDAA"/>
 <wire x1="43.688" y1="148.082" x2="26.416" y2="148.082" width="0.1524" layer="91"/>
 <label x="27.94" y="148.336" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="INPUTSCL" class="0">
 <segment>
-<pinref part="U$23" gate="G$1" pin="SCLA"/>
+<pinref part="U23" gate="G$1" pin="SCLA"/>
 <wire x1="43.688" y1="145.542" x2="26.416" y2="145.542" width="0.1524" layer="91"/>
 <label x="27.94" y="145.796" size="1.778" layer="95"/>
 </segment>
@@ -5620,14 +5620,14 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="P1" gate="G$1" pin="1"/>
 <wire x1="36.068" y1="120.904" x2="32.512" y2="120.904" width="0.1524" layer="91"/>
 <wire x1="32.512" y1="120.904" x2="32.512" y2="126.746" width="0.1524" layer="91"/>
-<pinref part="U$23" gate="G$1" pin="EN"/>
+<pinref part="U23" gate="G$1" pin="EN"/>
 <wire x1="32.512" y1="126.746" x2="71.628" y2="126.746" width="0.1524" layer="91"/>
 <wire x1="71.628" y1="126.746" x2="71.628" y2="143.002" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="U$23" gate="G$1" pin="SDAB"/>
+<pinref part="U23" gate="G$1" pin="SDAB"/>
 <wire x1="71.628" y1="148.082" x2="80.772" y2="148.082" width="0.1524" layer="91"/>
 <wire x1="80.772" y1="148.082" x2="99.06" y2="148.082" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="148.082" x2="99.06" y2="139.7" width="0.1524" layer="91"/>
@@ -5640,7 +5640,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </net>
 <net name="N$13" class="0">
 <segment>
-<pinref part="U$23" gate="G$1" pin="SCLB"/>
+<pinref part="U23" gate="G$1" pin="SCLB"/>
 <wire x1="71.628" y1="145.542" x2="86.36" y2="145.542" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="145.542" x2="96.012" y2="145.542" width="0.1524" layer="91"/>
 <wire x1="96.012" y1="145.542" x2="96.012" y2="137.16" width="0.1524" layer="91"/>

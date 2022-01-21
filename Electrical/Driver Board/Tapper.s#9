@@ -4418,7 +4418,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 </class>
 <class number="1" name="Ground" width="0.2032" drill="0.3048">
 </class>
-<class number="2" name="Power" width="0.2032" drill="0.3048">
+<class number="2" name="Power" width="0.3048" drill="0.3048">
 </class>
 </classes>
 <parts>
@@ -4825,7 +4825,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <pinref part="MI" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="VIN" class="2">
+<net name="VIN" class="0">
 <segment>
 <pinref part="U$20" gate="G$1" pin="VIN"/>
 <wire x1="36.068" y1="120.904" x2="26.67" y2="120.904" width="0.1524" layer="91"/>
@@ -5495,6 +5495,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <sheet>
 <plain>
 <text x="102.87" y="104.394" size="1.778" layer="97">3.3kohm resistor ladder</text>
+<text x="55.626" y="118.618" size="3.81" layer="97">NOTE: VIN is 3.3v</text>
 </plain>
 <instances>
 <instance part="U$65" gate="G$1" x="0" y="0" smashed="yes">
@@ -5743,7 +5744,7 @@ USE AT YOUR OWN RISK!&lt;p&gt;
 <wire x1="102.87" y1="48.768" x2="102.87" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VIN" class="2">
+<net name="VIN" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="U$1" gate="G$1" pin="VIN"/>
