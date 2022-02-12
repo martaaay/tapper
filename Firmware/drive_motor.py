@@ -136,12 +136,9 @@ def draw2x2pixel(x, y):
 def playEffect(effect, channel_ids):
   plexer.set_channel(mux_address, channel_ids)
   # See Appendix A of http://www.ti.com/lit/ug/slau543/slau543.pdf
-  try:
-    bWrite(DRV2605_REG_WAVESEQ1, effect)
-    bWrite(DRV2605_REG_WAVESEQ2, 0)
-    bWrite(DRV2605_REG_GO, 1)
-  except IOError:
-    print("Couldn't communicate with LRA at channel %s" % channel_ids)
+  bWrite(DRV2605_REG_WAVESEQ1, effect)
+  bWrite(DRV2605_REG_WAVESEQ2, 0)
+  bWrite(DRV2605_REG_GO, 1)
 
   try:
     display.clear()
@@ -160,7 +157,7 @@ def playAllWaveforms():
     if effect not in (15, 16, 118):
       print("Effect " + str(effect) + ": " + DRV2605_EFF_DESC[effect - 1])
       
-      for i in range(9):
+      for i in range(8):
         playEffect(effect, [i])
         time.sleep(.05)
         try:
@@ -169,18 +166,13 @@ def playAllWaveforms():
         except:
           pass
 
-      playEffect(effect, [0, 2])
-      time.sleep(.05)
       try:
-        display.clear()
-        display.write_display()
-      except:
-        pass
-      
-      time.sleep(.25)
-      enter_standby()
-      time.sleep(2)
-      exit_standby()
+        time.sleep(.25)
+        enter_standby()
+        time.sleep(2)
+        exit_standby()
+      except OSError:
+        print("Skipping..")
     
     effect += 1
 
