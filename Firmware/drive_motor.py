@@ -10,6 +10,10 @@ import time
 import smbus
 import TCA9548A
 
+import Adafruit_GPIO.I2C as I2C
+import board
+import digitalio
+
 from Adafruit_LED_Backpack import Matrix8x8
 
 bus = smbus.SMBus(1) # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
@@ -17,6 +21,11 @@ plexer = TCA9548A.Multiplexer(1)
 mux_address=0x70
 display = Matrix8x8.Matrix8x8(address=0x71, busnum=1)
 display.clear()
+
+mIEnable = digitalio.DigitalInOut(board.D4)
+mIEnable.direction = digitalio.Direction.OUTPUT
+mIEnable.value = False
+motorI = I2C.get_i2c_device(0x5a)
 
 DRV2605_ADDR = 0x5A
 
@@ -104,17 +113,23 @@ def begin():
   except IOError:
     print("Could not initialize display")
 
-  for i in range(0, 8):
-    plexer.set_channel(mux_address,[i])
+  for i in range(9):
+    if i == 8:
+      mIEnable.value = True
+      plexer.set_channel(mux_address,[])
+    else:
+      mIEnable.value = False
+      plexer.set_channel(mux_address,[i])
+
     try:
       print("" + str(i) + ": DRV2605 device ID " + readDeviceID() + " with status " + readStatus())
-
+  
       # Clear the STANDBY bit to exit the standby state (and go to the ready state)
       exit_standby()
-
+  
       # Switch to LRA library
       selectLibrary(6)
-
+  
       # Turn on LRA mode
       bWrite(DRV2605_REG_FEEDBACK, (0x01 << 7) | (0x3 << 4) | (0x01 << 2) | (0x02 << 0))
       
@@ -134,7 +149,6 @@ def draw2x2pixel(x, y):
       draw1x1pixel(xi, yi)
 
 def playEffect(effect, channel_ids):
-  plexer.set_channel(mux_address, channel_ids)
   # See Appendix A of http://www.ti.com/lit/ug/slau543/slau543.pdf
   bWrite(DRV2605_REG_WAVESEQ1, effect)
   bWrite(DRV2605_REG_WAVESEQ2, 0)
@@ -157,7 +171,14 @@ def playAllWaveforms():
     if effect not in (15, 16, 118):
       print("Effect " + str(effect) + ": " + DRV2605_EFF_DESC[effect - 1])
       
-      for i in range(8):
+      for i in range(9):
+        if i == 8:
+          mIEnable.value = True
+          plexer.set_channel(mux_address,[])
+        else:
+          mIEnable.value = False
+          plexer.set_channel(mux_address,[i])
+
         playEffect(effect, [i])
         time.sleep(.05)
         try:

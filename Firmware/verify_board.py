@@ -12,6 +12,9 @@ import TCA9548A
 
 from Adafruit_LED_Backpack import Matrix8x8
 import Adafruit_GPIO.I2C as I2C
+import board
+import digitalio
+
 
 bus = smbus.SMBus(1) # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
 plexer = TCA9548A.Multiplexer(1)
@@ -19,7 +22,10 @@ mux_address=0x70
 display = Matrix8x8.Matrix8x8(address=0x71, busnum=1)
 display.clear()
 
-#motorI = I2C.get_i2c_device(0x5a)
+mIEnable = digitalio.DigitalInOut(board.D4)
+mIEnable.direction = digitalio.Direction.OUTPUT
+mIEnable.value = False
+motorI = I2C.get_i2c_device(0x5a)
 
 DRV2605_ADDR = 0x5A
 
@@ -101,25 +107,20 @@ def begin():
     for i in range(0, 9):
       print("Channel %s" % i)
       if i == 8:
-          pass
-          #status = motorI.readU8(DRV2605_REG_STATUS)
-          #print("motorI device ID: %s" % DRV2605_DEVICE_ID[status >> 5])
-          #print("motorI status: ")
-          #if status & 0xF:
-          #  print("abnormal")
-          #else:
-          #  print("normal")
+          mIEnable.value = True
+          plexer.set_channel(mux_address,[])
       else:
+          mIEnable.value = False
           plexer.set_channel(mux_address,[i])
-          try:
-            print("DRV2605 device ID " + readDeviceID())
-          except IOError:
-            print("Not detected 1")
+      try:
+        print("DRV2605 device ID " + readDeviceID())
+      except IOError:
+        print("Not detected 1")
   
-          try:
-            print("DRV2605 status " + readStatus())
-          except IOError:
-            print("Not detected 2")
+      try:
+        print("DRV2605 status " + readStatus())
+      except IOError:
+        print("Not detected 2")
 
 def shutdown():
   print('Exiting...')
